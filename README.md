@@ -1,17 +1,26 @@
 # aws-fargate-magiclub-scaling
 
-ECS Fargate 서비스를 대상으로 Scaling Policy 정책을 적용 합니다.  
+Terraform 을 통해 ECS Fargate 서비스를 대상으로 Scaling Policy 정책을 적용 합니다.    
 이를 통해 AWS 가 강조하는 사용자 요청 부하에 대응하는 탄력적인 확장을 경험 합니다.
+
+<br>
 
 ## Requirements
 
 사전에 운영 중인 AWS Fargate 서비스가 있어야 Scaling-Policy 정책을 구성 할 수 있습니다.   
-AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy application](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.  
+
+- AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy application](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.  
+
+- AWS Fargate 조정 정책 구성은 [Apply Scaling-policy on ECS Fargate](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.
 
 | Name      | Version     |
 |-----------|-------------|
 | terraform | >= 1.0.0    |
 | aws       | >= 3.75.1   |
+
+
+<br>
+
 
 ## Providers
 
@@ -19,11 +28,19 @@ AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy applic
 |--------------------|-----------|
 | hashicorp/aws      | >= 4.10.0 |
 
+
+<br>
+
+
 ## Modules
 
 | Name                    |  Type   | Description                                                |
 |-------------------------|:-------:|:-----------------------------------------------------------|
 | modules/target-tracking | Local   | Terraform module for Target-Tracking scaling policy on ECS |
+
+
+<br>
+
 
 ## Inputs
 
@@ -148,6 +165,9 @@ AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy applic
 </table>
 
 
+<br>
+
+
 ## Git
 
 aws-fargate-magiclub-scaling 테라폼 프로젝트를 `git clone` 명령으로 내려 받습니다.
@@ -155,6 +175,9 @@ aws-fargate-magiclub-scaling 테라폼 프로젝트를 `git clone` 명령으로 
 ```
 git clone https://github.com/chiwoo-cloud-native/aws-fargate-magiclub-scaling.git
 ```
+
+<br>
+
 
 ## Build
 
@@ -165,6 +188,9 @@ cd aws-fargate-magiclub-scaling
 
 terraform init && terraform apply -auto-approve
 ```
+
+<br>
+
 
 ## Destroy
 `terraform destroy` 명령을 실행하여 Target-Tracking 조정 정책을 한번에 제거 합니다. 
