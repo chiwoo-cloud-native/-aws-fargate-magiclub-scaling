@@ -5,6 +5,9 @@ ECS Fargate 서비스를 대상으로 Scaling Policy 정책을 적용 합니다.
 
 ## Requirements
 
+사전에 운영 중인 AWS Fargate 서비스가 있어야 Scaling-Policy 정책을 구성 할 수 있습니다.   
+AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy application](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.  
+
 | Name      | Version     |
 |-----------|-------------|
 | terraform | >= 1.0.0    |
@@ -114,7 +117,7 @@ ECS Fargate 서비스를 대상으로 Scaling Policy 정책을 적용 합니다.
   <td>"cpu"</td>
 </tr>
 <tr>
-  <td>metric_value</td>
+  <td>target_value</td>
   <td>매트릭 지표의 임계 값을 설정 합니다.</td>
   <td>number</td>
   <td>Y</td>
@@ -143,3 +146,28 @@ ECS Fargate 서비스를 대상으로 Scaling Policy 정책을 적용 합니다.
 </tr>
 </tbody>
 </table>
+
+
+## Git
+
+aws-fargate-magiclub-scaling 테라폼 프로젝트를 `git clone` 명령으로 내려 받습니다.
+
+```
+git clone https://github.com/chiwoo-cloud-native/aws-fargate-magiclub-scaling.git
+```
+
+## Build
+
+프로젝트 기준 경로 `aws-fargate-magiclub-scaling` 로 이동하여 `terraform apply` 명령을 통해 ECS 서비스를 대상으로 Target-Tracking 조정 정책을 적용 합니다. 
+
+```
+cd aws-fargate-magiclub-scaling
+
+terraform init && terraform apply -auto-approve
+```
+
+## Destroy
+`terraform destroy` 명령을 실행하여 Target-Tracking 조정 정책을 한번에 제거 합니다. 
+```
+terraform destroy -auto-approve
+```
