@@ -10,8 +10,9 @@ Terraform 을 통해 ECS Fargate 서비스를 대상으로 Scaling Policy 정책
 사전에 운영 중인 AWS Fargate 서비스가 있어야 Scaling-Policy 정책을 구성 할 수 있습니다.   
 
 - AWS Fargate 서비스 배포는 [Automation Building AWS Fargate & Deploy application](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.  
+- AWS Fargate 조정 정책 구성 관련 자세한 내용은 [Apply Scaling-policy on ECS Fargate](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.
 
-- AWS Fargate 조정 정책 구성은 [Apply Scaling-policy on ECS Fargate](https://symplesims.github.io/devops/aws%20fargate/terraform/2022/04/23/building-aws-fargate.html) 블로그를 참고 하세요.
+<br>
 
 | Name      | Version     |
 |-----------|-------------|
